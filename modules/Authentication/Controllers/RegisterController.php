@@ -6,9 +6,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Modules\Authentication\Models\User;
-use Modules\Main\Controllers\ControllerAbstract;
 
-class RegisterController extends ControllerAbstract
+class RegisterController extends AuthenticationController
 {
     /*
     |--------------------------------------------------------------------------
@@ -38,6 +37,12 @@ class RegisterController extends ControllerAbstract
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+
+    public function showRegistrationForm()
+    {
+        return view('auth::register');
     }
 
     /**

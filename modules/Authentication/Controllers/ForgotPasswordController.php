@@ -3,9 +3,8 @@
 namespace Modules\Authentication\Controllers;
 
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
-use Modules\Main\Controllers\ControllerAbstract;
 
-class ForgotPasswordController extends ControllerAbstract
+class ForgotPasswordController extends AuthenticationController
 {
     /*
     |--------------------------------------------------------------------------
@@ -28,5 +27,11 @@ class ForgotPasswordController extends ControllerAbstract
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+
+    public function showLinkRequestForm()
+    {
+        return view('auth::passwords.email');
     }
 }

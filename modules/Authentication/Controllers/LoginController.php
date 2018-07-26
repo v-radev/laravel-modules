@@ -3,9 +3,8 @@
 namespace Modules\Authentication\Controllers;
 
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Modules\Main\Controllers\ControllerAbstract;
 
-class LoginController extends ControllerAbstract
+class LoginController extends AuthenticationController
 {
     /*
     |--------------------------------------------------------------------------
@@ -35,5 +34,11 @@ class LoginController extends ControllerAbstract
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+
+    public function showLoginForm()
+    {
+        return view('auth::login');
     }
 }
