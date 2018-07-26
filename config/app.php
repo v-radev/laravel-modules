@@ -160,6 +160,11 @@ return [
         Modules\Main\Providers\EventServiceProvider::class,
         Modules\Main\Providers\RouteServiceProvider::class,
 
+        /*
+         * Modules Service Providers...
+         */
+        Modules\Main\Providers\ModuleServiceProvider::class,
+        Modules\Authentication\Providers\ModuleServiceProvider::class,
     ],
 
     /*
